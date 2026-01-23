@@ -4,10 +4,11 @@ import './index.css'
 import App from './App.tsx'
 import timePhoto from "/src/assets/time.jpg"
 import conductorPhoto from "/src/assets/conductor.jpg"
-import etfPhoto from "/src/assets/etf.jpg"
+import etfPhoto from "/src/assets/etf.png"
 import verifaiPhoto from "/src/assets/verifai.jpg"
 import motionPhoto from "/src/assets/motion.jpg"
-import photoPhoto from "/src/assets/photofinish.jpg"
+import photoPhoto from "/src/assets/photofinish.png"
+import memospace from "/src/assets/memospace.png"
 
 
 
@@ -70,6 +71,16 @@ export default function Projects() {
 
   const projects: Project[] = [
     {
+      title: "MemoSpace",
+      img: memospace,
+      alt: "MemoSpace App",
+      desc: "An iOS solution to spatially preserving memories the way you experienced them.",
+      long: "Capture real-world locations and revisit them as navigable 3D spaces, with photos, notes, " 
+      + "and memories anchored to specific places. Instead of flat photos or videos, it preserves the spatial context " 
+      + " of meaningful moments, making memories feel immersive and revisitable over time.",
+      link:"https://github.com/stovetopman/nw2026",
+    },
+    {
     title: "PhotoFinish",
     img: photoPhoto,
     alt: "PhotoFinish App",
@@ -121,7 +132,7 @@ export default function Projects() {
     desc: "AI powered reminder tool focused on elderly accessibility",
     long: "TimeCapsule is an accessibility-focused health tool designed for elderly users who need reliable, personalized medication reminders. " 
     + "Using OpenAI for message generation and Twilio for real-time SMS alerts, the app automates customized scheduling and notifications. " 
-    + "A multimodal experience is enabled by OpenCV-powered object recognition, ensuring intuitive interactions. " 
+    + "A multimodal experience is enabled by OpenCV-powere  d object recognition, ensuring intuitive interactions. " 
     + "The React front-end ties everything together with a clean, user-friendly interface that bridges the computer-vision pipeline and messaging workflow.",
     link:"https://devpost.com/software/timecapsules",
   },
@@ -175,7 +186,6 @@ export default function Projects() {
             className="modal-glass"
             onClick={(e) => e.stopPropagation()}
           >
-            <img src={activeProject.img} className="modal-image" />
 
             <h2 className="modal-title">{activeProject.title}</h2>
             <p className="modal-text">{activeProject.long}</p>
@@ -187,6 +197,8 @@ export default function Projects() {
             >
               Explore →
               </a>
+              <img src={activeProject.img} className="modal-image" />
+
           </div>
         </div>
       )}
@@ -232,11 +244,7 @@ export function AboutMe() {
             <p className="about-description fade-in">
 
               Nice to meet you! I'm curently studying Computer Science and Business at the University of British Columbia, looking the next place I can make an impact. 
-              I’m passionate about building software that improves people’s lives through accessibility, clarity, and thoughtful design. 
-              What motivates me most is the human side of technology: designing products that are intuitive, thoughtful, and meet people where they are. 
-              I’m driven by the challenge of 
-              turning real user needs into genuine experiences through thoughtful 
-              design and reliable engineering. My goal is to use technology not just to solve problems, but to make life feel more manageable, meaningful, and accessible for everyone.
+              I like building software for humans, products that are intuitive and thoughtful, improving lives and bringing value to people's day.
             </p>
           )}
         </div>
@@ -272,7 +280,7 @@ export  function Contact() {
             rel="noopener noreferrer"
             className="contact-text-link"
           >
-            linkedin.com/in/YOUR-LINKEDIN
+            linkedin.com/in/jaspermao0705
           </a>
         </div>
 
