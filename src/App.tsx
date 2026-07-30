@@ -1,8 +1,10 @@
-import Projects, { AboutMe, Contact, HelcimExperience, TikTokShopExperience} from "./main";
+import Projects, { AboutMe, Contact, Header, HelcimExperience, TikTokShopExperience} from "./main";
 
 export default function App() {
   return (
     <main className="container">
+            <Header />
+
       <section className="hero">
         <div className="hero-glow"></div>
         <div className="hero-glass">

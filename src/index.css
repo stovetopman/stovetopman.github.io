@@ -686,3 +686,141 @@ body {
 .contact-text-link:hover {
   opacity: 1;
 }
+
+
+.header-container {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-content {
+  max-width: 950px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.header-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #e0e7ff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+}
+
+.header-tagline {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  display: none;
+}
+
+.header-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-left: auto;
+}
+
+.header-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.header-link:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.email-link:hover {
+  border-color: rgba(100, 200, 255, 0.5);
+  background: rgba(100, 200, 255, 0.1);
+  color: #64c8ff;
+}
+
+.linkedin-link:hover {
+  border-color: rgba(0, 119, 181, 0.5);
+  background: rgba(0, 119, 181, 0.1);
+  color: #0077b5;
+}
+
+.link-icon {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.header-link:hover .link-icon {
+  opacity: 1;
+}
+
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0.75rem 1rem;
+  }
+
+  .header-content {
+    gap: 1rem;
+  }
+
+  .header-name {
+    font-size: 1.2rem;
+  }
+
+  .header-links {
+    gap: 0.5rem;
+  }
+
+  .header-link {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.7rem;
+  }
+
+  .link-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
