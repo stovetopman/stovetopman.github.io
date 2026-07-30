@@ -29,7 +29,7 @@ createRoot(document.getElementById('root')!).render(
   </StrictMode>,
 )
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import helcimLogo from "/src/assets/helcimlogo.jpg"; 
 
@@ -68,6 +68,23 @@ strengething platform security for 500+ merchant signups</li>
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [imageOrientation, setImageOrientation] = useState<"portrait" | "landscape">("landscape");
+
+  useEffect(() => {
+    if (!activeProject) return;
+
+    const img = new Image();
+    img.onload = () => {
+      setImageOrientation(
+        img.naturalWidth > img.naturalHeight ? "landscape" : "portrait"
+      );
+    };
+    img.src = activeProject.img;
+
+    return () => {
+      img.onload = null;
+    };
+  }, [activeProject]);
 
   const projects: Project[] = [
     {
@@ -183,22 +200,31 @@ export default function Projects() {
       {activeProject && (
         <div className="modal-backdrop" onClick={() => setActiveProject(null)}>
           <div
-            className="modal-glass"
+            className={`modal-glass modal-glass--${imageOrientation}`}
             onClick={(e) => e.stopPropagation()}
           >
+            <div className="modal-content">
+              <h2 className="modal-title">{activeProject.title}</h2>
+              <p className="modal-text">{activeProject.long}</p>
+              {activeProject.link && (
+                <a
+                  className="modal-link"
+                  href={activeProject.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Explore →
+                </a>
+              )}
+            </div>
 
-            <h2 className="modal-title">{activeProject.title}</h2>
-            <p className="modal-text">{activeProject.long}</p>
-            <a 
-            className="modal-link"
-            href={activeProject.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-              Explore →
-              </a>
-              <img src={activeProject.img} className="modal-image" />
-
+            <div className="modal-media">
+              <img
+                src={activeProject.img}
+                alt={activeProject.alt}
+                className="modal-image"
+              />
+            </div>
           </div>
         </div>
       )}
@@ -206,7 +232,6 @@ export default function Projects() {
   );
 }
 
-import { useEffect } from "react";
 import profilePic from "/src/assets/profile.jpeg"; // Replace with your image
 
 export function AboutMe() {
