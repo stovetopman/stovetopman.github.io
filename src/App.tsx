@@ -1,5 +1,4 @@
-
-import Projects, { AboutMe, Contact, HelcimExperience } from "./main";
+import Projects, { AboutMe, Contact, HelcimExperience, TikTokShopExperience} from "./main";
 
 export default function App() {
   return (
@@ -27,6 +26,7 @@ export default function App() {
       </section>
       
       <AboutMe />
+      <TikTokShopExperience />
       <HelcimExperience />
       <Projects />
       <Contact />
