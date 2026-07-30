@@ -199,21 +199,22 @@ body {
 .hero-scroll-indicator {
   position: absolute;
   bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 3;
   opacity: 0.65;
-  /* animation: fadeIn 1.4s ease both; */
-  animation: bounce 5s infinite ease-in-out; 
-  animation-iteration-count: infinite;
+  pointer-events: none;
 }
 
 .arrow-down {
-  font-size: 10rem;
+  display: block;
+  width: 3.5rem;
+  height: 3.5rem;
   color: rgba(80, 70, 60, 0.7);
-  animation: bounce 2.2s infinite ease-in-out; 
-  animation-iteration-count: infinite;
-
+  animation: bounce 2.2s infinite ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -337,7 +338,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 28px;
   padding: 2.5rem;
-  max-width: 700px;
+  max-width: 920px;
   width: 90%;
   max-height: 90vh;
   overflow-y: auto;
@@ -349,6 +350,34 @@ body {
   animation: modalZoomIn 0.25s ease forwards;
 }
 
+.modal-glass--portrait {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.modal-glass--landscape {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modal-content {
+  min-width: 0;
+}
+
+.modal-media {
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-glass--landscape .modal-media {
+  width: 100%;
+}
+
 @keyframes modalZoomIn {
   from { opacity: 0; transform: scale(0.9); }
   to   { opacity: 1; transform: scale(1); }
@@ -357,12 +386,19 @@ body {
 /* MODALMODALMODALMODALMODALMODALMODALMODALMODALMODAL */
 
 .modal-image {
-  max-width: 700px;
-  object-fit: cover;
+  width: 100%;
+  max-height: 55vh;
+  object-fit: contain;
   border-radius: 18px;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
   box-shadow: 0 8px 25px rgba(150, 140, 130, 0.25);
+}
+
+.modal-glass--portrait .modal-image {
+  max-height: min(55vh, 520px);
+}
+
+.modal-glass--landscape .modal-image {
+  max-height: min(45vh, 420px);
 }
 
 .modal-title {
@@ -376,7 +412,13 @@ body {
   font-size: 1.15rem;
   color: #5b5754;
   line-height: 1.75;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .modal-glass--portrait {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Close Button */
