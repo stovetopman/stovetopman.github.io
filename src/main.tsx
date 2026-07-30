@@ -32,14 +32,17 @@ createRoot(document.getElementById('root')!).render(
 import { useState, useEffect } from "react";
 
 import helcimLogo from "/src/assets/helcimlogo.jpg"; 
+import tiktokLogo from "/src/assets/tiktok.png";
 
 export function HelcimExperience() {
   return (
     <section className="experience-section helcim-gradient">
       <div className="experience-header">
         <img src={helcimLogo} alt="Helcim Logo" className="helcim-logo" />
-        <h2 className="experience-title">Helcim - Software Development Intern</h2>
+        <h1 className="experience-title">Helcim</h1>
       </div>
+      <h3 className="experience-subtitle">Software Development Intern</h3>
+
 
       <p className="experience-dates">May 2024 – May 2025 · Calgary, AB</p>
 
@@ -63,6 +66,29 @@ strengething platform security for 500+ merchant signups</li>
   );
 }
 
+export function TikTokShopExperience() {
+  return (
+    <section className="experience-section tiktok-gradient">
+      <div className="experience-header">
+        <img src={tiktokLogo} alt="TikTok Logo" className="helcim-logo" />
+        <h2 className="experience-title">ByteDance | TikTok Shop US</h2>
+      </div>
+      <h3 className="experience-subtitle">Product Operations & Strategy Intern</h3>
+
+      <p className="experience-dates">May 2026 – July 2026 · Global E-commerce</p>
+
+      <p className="experience-summary">
+        At TikTok Shop, I drove operational excellence and merchant growth through data-driven automation and real-time analytics. As a Product Operations intern on the Global E-commerce team, I designed systems to improve merchant onboarding, inventory visibility, and account health—directly supporting 50+ merchants and enabling faster decision-making for cross-functional teams.
+      </p>
+
+      <ul className="experience-list">
+        <li>Implemented an automated sample inventory tracking system for products across 50+ merchants, reducing manual data entry by 60% and enabling same-day visibility into stock levels</li>
+        <li>Built merchant anomaly detection pipeline with 95% precision, identifying 6-8 at-risk merchant accounts monthly for proactive intervention and retention</li>
+        <li>Developed real-time KPI dashboard tracking merchant and product performance across varying product pools with 30+ daily users, providing actionable insights for stakeholder decision-making</li>
+      </ul>
+    </section>
+  );
+}
 
 
 
@@ -269,7 +295,7 @@ export function AboutMe() {
             <p className="about-description fade-in">
 
               Nice to meet you! I'm curently studying Computer Science and Business at the University of British Columbia, looking the next place I can make an impact. 
-              I like building software for humans, products that are intuitive and thoughtful, improving lives and bringing value to people's day.
+              I've worked primarily with all facets of E-commerce, from product operations and strategy to payments and engineering, interacting with merchants and stakeholders to deliver products and features that are intuitive and thoughtful, improving lives and bringing value to people's day.
             </p>
           )}
         </div>
