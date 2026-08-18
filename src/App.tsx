@@ -1,4 +1,4 @@
-import Projects, { AboutMe, Contact, Header, HelcimExperience, TikTokShopExperience} from "./main";
+import Projects, { AboutMe, Contact, Header, HelcimExperience, TikTokShopExperience, Coursework} from "./main";
 
 export default function App() {
   return (
@@ -28,11 +28,13 @@ export default function App() {
       </section>
       
       <AboutMe />
-      <TikTokShopExperience />
-      <HelcimExperience />
+     <div className="experience-grid">
+  <TikTokShopExperience />
+  <HelcimExperience />
+</div>
       <Projects />
-      <Contact />
-
+      {/* <Contact /> */}
+      <Coursework />
 
       <footer className="footer">
         <p className="text-small">

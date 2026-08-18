@@ -47,8 +47,8 @@ export function HelcimExperience() {
       <p className="experience-dates">May 2024 – May 2025 · Calgary, AB</p>
 
       <p className="experience-summary">
-        At Helcim, I worked on building trustworthy financial products through full-stack
-        engineering, fraud detection, and secure authentication systems. As part of the Risk team, I collaborated with Trust and Safety teams to deliver reliable and intuitive merchant tooling.
+        Built fraud detection, and secure authentication systems with full-stack engineering.
+         As part of the Risk team, I collaborated with Trust and Safety teams to deliver reliable and intuitive merchant tooling.
       </p>
 
       <ul className="experience-list">
@@ -78,7 +78,8 @@ export function TikTokShopExperience() {
       <p className="experience-dates">May 2026 – July 2026 · Global E-commerce</p>
 
       <p className="experience-summary">
-        At TikTok Shop, I drove operational excellence and merchant growth through data-driven automation and real-time analytics. As a Product Operations intern on the Global E-commerce team, I designed systems to improve merchant onboarding, inventory visibility, and account health—directly supporting 50+ merchants and enabling faster decision-making for cross-functional teams.
+        I designed and optimized systems to improve merchant onboarding, inventory visibility, and account 
+        health through automation and analytics. Directly supported 80+ merchants to make faster decisions with cross-functional teams.
       </p>
 
       <ul className="experience-list">
@@ -409,6 +410,75 @@ export  function Contact() {
           </a>
         </div>
 
+      </div>
+    </section>
+  );
+}
+
+export function Coursework() {
+  const courses = [
+    {
+
+      title: "Artificial Intelligence, Agents and Search",
+      topics: ["Graph Searching",
+        "Natural language", "State/action Models", "Computational vision"]
+    },
+    {
+      title: "Data Visualization",
+      topics: ["Power BI", "Tableau", "Analytics"]
+    },
+    {
+      title: "Computer Systems",
+      topics: ["Software Architecture", "Operating Systems", "I/O Architectures", "Deadlock Avoidance", "Principles and Operation of disks/networks"]
+    },
+    {
+      title: "Data Structures and Algorithms",
+      topics: ["Algorithm Design/Analysis", "Search/Sort algorithms", "data structures", "graphs and concurrency"]
+    },
+    {
+      title: "Algorithm Design and Analysis",
+      topics: ["models of computation", 
+        "choice of data structures", "graph-theoretic, algebraic, and text processing algorithms"]
+    },
+    {
+      title: "Applied Machine Learning",
+      topics: ["Data cleaning", "Feature Extraction", "Model Tuning and Optimization", "Reproducible Workflows", "Results Visualization"]
+    },
+    {
+      title: "Relational Databases",
+      topics: ["Database Systems", "ER models", "Database Design/Normalization", "Formal Relational Query Languages", "SQL"]
+    },
+    {
+      title: "Software Engineering",
+      topics: ["Governance", "Contracts"]
+    },
+    {
+      title: "I.T. Systems, Analysis, and Development",
+      topics: ["Governance", "Contracts"]
+    },
+
+  ];
+
+  return (
+    <section className="coursework-section">
+      <h2 className="coursework-title">Relevant Coursework</h2>
+
+      <div className="coursework-timeline">
+        {courses.map((course, idx) => (
+          <div key={idx} className={`coursework-item ${idx % 2 === 0 ? 'left' : 'right'}`}>
+            <div className="coursework-marker"></div>
+            
+            <div className="coursework-content">
+              <div className="coursework-header">
+                <span className="coursework-code">{course.code}</span>
+                <h3 className="coursework-name">{course.title}</h3>
+              </div>
+              <p className="coursework-topics">
+                {course.topics.join(" • ")}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
